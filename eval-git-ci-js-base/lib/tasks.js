@@ -8,6 +8,10 @@ function addTask(name) {
     return task;
 }
 
+function countDone() {
+    return tasks.filter(task => task.done).length;
+}
+
 function getTasks() {
     return tasks;
 }
@@ -17,4 +21,4 @@ function reset() {
     nextId = 1;
 }
 
-module.exports = { getTasks, reset , addTask };
+module.exports = { getTasks, reset , addTask , countDone };
