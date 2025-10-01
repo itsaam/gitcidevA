@@ -17,4 +17,14 @@ function toggleTask(id) {
     return task;
 }
 
-module.exports = { getTasks, reset, toggleTask };
+function addTask(name) {
+    const task = { id: nextId++, name, done: false };
+    tasks.push(task);
+    return task;
+}
+
+function countDone() {
+    return tasks.filter(task => task.done).length;
+}
+
+module.exports = { getTasks, reset , addTask , countDone , toggleTask };
